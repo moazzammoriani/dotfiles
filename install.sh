@@ -8,7 +8,10 @@ else
     DOT_FILES_DIR=$(pwd)
 fi
 
-echo ln -s $DOT_FILES_DIR/gitconfig $HOME/.gitconfig
-ln -s $DOT_FILES_DIR/gitconfig $HOME/.gitconfig
-
-
+for file in *; do
+    if [[ $file != "install.sh" ]] && \
+       [[ $file != "config" ]]; then
+        echo ln -s $DOT_FILES_DIR/gitconfig $HOME/.gitconfig
+        ln -s $DOT_FILES_DIR/gitconfig $HOME/.gitconfig
+    fi
+done
