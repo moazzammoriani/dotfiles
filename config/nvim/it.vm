@@ -1,0 +1,34 @@
+set number "show me the current line number
+set relativenumber "show me the 
+set tabstop=4 softtabstop=4 "
+set smartindent
+set nohlsearch
+set nowrap
+set hidden
+set noswapfile
+set scrolloff=8
+set signcolumn=yes
+set t_Co=256
+set t_ut=
+set noshowmode 
+set termguicolors
+
+" ================================================
+"				  	 Plugins
+" ================================================
+
+call plug#begin('/home/moazzam/.config/nvim/plugins')
+
+Plug 'tomasiser/vim-code-dark'
+
+Plug 'Mofiqul/dracula.nvim'
+
+Plug 'itchyny/lightline.vim'
+
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+
+call plug#end()
+
+colorscheme codedark
+
+let mapleader = " "
