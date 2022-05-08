@@ -11,7 +11,7 @@ fi
 for file in *; do
     if [[ $file != "install.sh" ]] && \
        [[ $file != "config" ]]; then
-        echo ln -s $DOT_FILES_DIR/gitconfig $HOME/.gitconfig
-        ln -s $DOT_FILES_DIR/gitconfig $HOME/.gitconfig
+        echo "$DOT_FILES_DIR/$file -> $HOME/.$file"
+        ln -s $DOT_FILES_DIR/$file $HOME/.$file
     fi
 done
