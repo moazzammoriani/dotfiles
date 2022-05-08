@@ -14,10 +14,10 @@ FILE=""
 send_syms () {
     if [[ $FILE != "install.sh" ]]; then
         if [[ -e $SYM_LINK_PATH ]]; then
-            echo "Symbolic link for $FILE already exists"
+            echo "Symbolic link for $SYM_LINK_PATH already exists"
         else
-            echo "$DOTFILES_PATH -> $SYM_LINK"
-            ln -s $DOTFILES_PATH $SYM_LINK
+            echo "$DOTFILES_PATH -> $SYM_LINK_PATH"
+            ln -s $DOTFILES_PATH $SYM_LINK_PATH
         fi
     fi
 }
@@ -25,9 +25,7 @@ send_syms () {
 for F in $SCAN_DIR/*; do
     FILE=$(echo $F | sed "s/.*\///")
     SYM_LINK_PATH=$HOME/.$FILE
-    echo $SYM_LINK_PATH
     DOTFILES_PATH=$DOTFILES_DIR/$FILE
-    echo $DOTFILES_PATH
 
     if [[ $FILE != "config" ]]; then 
         send_syms
@@ -41,9 +39,7 @@ if [[ -e $DOTFILES_DIR/config ]]; then
     for F in $SCAN_DIR/*; do
         FILE=$(echo $F | sed "s/.*\///")
         SYM_LINK_PATH=$HOME/.config/$FILE
-        echo $SYM_LINK_PATH
         DOTFILES_PATH=$DOTFILES_DIR/config/$FILE
-        echo $DOTFILES_PATH
 
         send_syms
     done
