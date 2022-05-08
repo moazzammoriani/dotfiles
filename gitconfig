@@ -1,0 +1,7 @@
+[user]
+	email = mozmoriani@gmail.com
+	name = Moazzam Moriani
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
