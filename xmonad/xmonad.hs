@@ -396,9 +396,6 @@ myEventHook = mempty
 -- By default, do nothing.
 myStartupHook = do
         spawnOnce "nitrogen --restore &"
-        spawnOnce "compton &"
-        spawnOnce "xinput set-prop 13 314 1" -- Enable natural scrolling on touchpad
-        spawnOnce "xinput set-prop 13 334 1" -- Enable tap to select and double tap to right-click on touch pad
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 
@@ -418,9 +415,9 @@ main = do
             ppOutput = hPutStrLn xmproc
           , ppTitle = xmobarColor xmobarTitleColor "" . shorten 20
           , ppVisible = xmobarColor "red" "" 
-          , ppHidden = xmobarColor "#68eda0" "" 
-          , ppHiddenNoWindows = xmobarColor "#ffffff" ""  
-          , ppCurrent = xmobarColor "#ff6e30" "" . wrap ("<box type=Bottom width=3 mt=2 color=" ++ "#ff6e30" ++ ">") "</box>"
+          , ppHidden = xmobarColor "#ffffff" "" 
+          , ppHiddenNoWindows = xmobarColor "#999999" ""  
+          , ppCurrent = xmobarColor "#00ffff" "" . wrap ("<box type=Bottom width=3 mt=2 color=" ++ "#00ffff" ++ ">") "</box>"
           , ppExtras  = [windowCount]
           , ppSep = "    "
           }
