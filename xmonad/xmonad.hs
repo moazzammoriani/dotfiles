@@ -416,7 +416,7 @@ main = do
           , ppTitle = xmobarColor xmobarTitleColor "" . shorten 20
           , ppVisible = xmobarColor "red" "" 
           , ppHidden = xmobarColor "#ffffff" "" 
-          , ppHiddenNoWindows = xmobarColor "#999999" ""  
+          , ppHiddenNoWindows = xmobarColor "#888888" ""  
           , ppCurrent = xmobarColor "#00ffff" "" . wrap ("<box type=Bottom width=3 mt=2 color=" ++ "#00ffff" ++ ">") "</box>"
           , ppExtras  = [windowCount]
           , ppSep = "    "

@@ -35,6 +35,7 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
+(setq doom-font (font-spec :family "Fira Code Nerd Font" :size 16 :weight 'light))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
